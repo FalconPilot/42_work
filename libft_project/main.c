@@ -28,7 +28,6 @@ void	test_atoi()
 	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi("01234567890"), atoi("01234567890"));
 	printf("Input : \"111bla\"\n");
 	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi("111bla"), atoi("111bla"));
-	printf("Input : \"   97 8\"\n");
 	printf("Input : \"-5Ab...\"\n");
 	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi("-5Ab..."), atoi("-5Ab..."));
 	printf("Input : \"   97 8\"\n");
