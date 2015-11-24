@@ -13,7 +13,7 @@
 NAME =		debug_program
 PROG =		main.c
 
-DIR =		libft/
+DIR =		libft2/
 LIB =		-L./$(DIR) -lft
 FLAGS =		-Wall -Wextra -Werror -I$(DIR)
 
