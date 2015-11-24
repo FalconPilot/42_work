@@ -64,9 +64,9 @@ void	bzero_string(void *str, size_t empty, int func)
 	while (i <= len)
 	{
 		if (buf[i])
-			printf(" %c ", buf[i]);
+			printf(" %c|", buf[i]);
 		else
-			printf("\\0 ");
+			printf("\\0|");
 		i++;
 	}
 	printf("\n");
