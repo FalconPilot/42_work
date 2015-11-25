@@ -10,20 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <libft.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t			i;
 	unsigned char	*src;
-	unsigned char	swap;
 
 	i = 0;
 	src = b;
-	swap = c;
 	while (i < len)
 	{
-		src[i] = swap;
+		src[i] = (unsigned char)c;
 		i++;
 	}
 	b = src;

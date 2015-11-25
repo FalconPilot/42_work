@@ -1,6 +1,6 @@
 
 
-#include <string.h>
+#include <libft.h>
 
 size_t	strlen(const char *s)
 {

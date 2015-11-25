@@ -13,6 +13,7 @@
 RED =			\033[31m
 GRE =			\033[32m
 YEL =			\033[33m
+BLU =			\033[34m
 STD =			\033[39m
 
 NAME =			libft
@@ -27,6 +28,7 @@ SRC =			ft_atoi.c		\
 				ft_isdigit.c	\
 				ft_isprint.c	\
 				ft_memset.c		\
+				ft_strcat.c		\
 				ft_strcmp.c		\
 				ft_strdup.c		\
 				ft_strlen.c		\
@@ -40,8 +42,7 @@ $(NAME): header $(LIB)
 	@echo " ${YEL}Compilation terminee !${STD}"
 
 $(LIB): $(OBJ)
-	@echo ""
-	@echo " ${GRE}+Compilation :${STD} $(LIB)"
+	@echo " ${BLU}+Compilation :${STD} $(LIB)"
 	@ar rc $(LIB) $(OBJ)
 	@ranlib $(LIB)
 
