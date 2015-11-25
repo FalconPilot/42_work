@@ -20,6 +20,12 @@ FLAGS =		-Wall -Wextra -Werror -I$(DIR)
 $(NAME): header
 	@gcc $(FLAGS) $(PROG) $(LIB) -o $(NAME)
 
+clean: header
+	@clear
+	@echo "---Nettoyage du programme de test---"
+	@echo ""
+	@rm -f $(NAME)
+
 header:
 	@clear
 	@echo "---Programme de test---"

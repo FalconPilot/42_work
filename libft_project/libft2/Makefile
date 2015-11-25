@@ -17,7 +17,7 @@ STD =			\033[39m
 
 NAME =			libft
 LIB =			libft.a
-FLAGS =			-Wall -Wextra -Werror
+FLAGS =			-Wall -Wextra -Werror -I.
 
 SRC =			ft_atoi.c		\
 				ft_bzero.c		\
@@ -28,6 +28,8 @@ SRC =			ft_atoi.c		\
 				ft_isprint.c	\
 				ft_memset.c		\
 				ft_strcmp.c		\
+				ft_strdup.c		\
+				ft_strlen.c		\
 				ft_strncmp.c	\
 				ft_tolower.c	\
 				ft_toupper.c
