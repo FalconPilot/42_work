@@ -1,7 +1,6 @@
 
 
 #include <libft.h>
-#include <stdlib.h>
 
 char	*strdup(const char *s1)
 {
