@@ -29,6 +29,7 @@ SRC =			ft_atoi.c		\
 				ft_isprint.c	\
 				ft_memset.c		\
 				ft_putchar.c	\
+				ft_putendl.c	\
 				ft_putstr.c		\
 				ft_strcat.c		\
 				ft_strcmp.c		\
