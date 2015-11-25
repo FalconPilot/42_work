@@ -2,7 +2,7 @@
 
 #include <libft.h>
 
-char	*ft_strcat(char *s1, const char *s2, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	int		i;
 	size_t	i2;

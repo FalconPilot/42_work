@@ -10,15 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		find_it(const char *str)
-{
-	int		i;
-
-	i = 0;
-	while (str[i] == 32 || str[i] == 9)
-		i++;
-	return (i);
-}
+#include <libft.h>
 
 int		ft_atoi(const char *str)
 {
@@ -38,10 +30,10 @@ int		ft_atoi(const char *str)
 	}
 	while (str[i])
 	{
-		if (str[i] < '0' || str[i] > '9')
+		if (!ft_isdigit(str[i]))
 			return (num * sym);
 		num += (str[i] - '0');
-		if (str[i + 1] && str[i + 1] >= '0' && str[i + 1] <= '9')
+		if (str[i + 1] && ft_isdigit(str[i + 1]))
 			num *= 10;
 		i++;
 	}
