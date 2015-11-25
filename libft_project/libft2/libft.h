@@ -22,6 +22,8 @@ int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_isprint(int c);
 void		*ft_memset(void *b, int c, size_t len);
+void		ft_putchar(char c);
+void		ft_putstr(const char *s);
 char		*ft_strcat(char *s1, const char *s2);
 int			ft_strcmp(const char *s1, const char *s2);
 char		*ft_strdup(const char *s1);

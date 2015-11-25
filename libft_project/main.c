@@ -108,9 +108,9 @@ int		diff_alnum(char test, char target)
 	{
 		printf("Input : \"%c\"\n", test);
 		printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_isalnum(test), isalnum(test));
-		if (ft_isalnum(test) == 0 && isalnum(test) != 0)
+		if (ft_isalnum(test) && !isalnum(test))
 			ret++;
-		else if (ft_isalnum(test) != 0 && isalnum(test) == 0)
+		else if (!ft_isalnum(test) && isalnum(test))
 			ret++;
 		test++;
 	}
