@@ -61,14 +61,9 @@ une copie de la fonction sur la stack, et ainsi de suite. On remarque donc que l
 plus en plus de copies de la même fonction, ce qui peut poser problème sur une fonction possédant de très
 nombreuses récursions.
 
-# En quoi le fait de placer le rappel en fin de fonction arrange les choses ?
+# En quoi le fait de placer le rappel en fin de fonction peut corriger ce problème ?
 
-C'est la où la magie de la compilation opère. Le compilateur, détectant alors que notre fonction "tail_recursive"
-pour la prendre en exemple est une fonction récursive terminale, va réorganiser les données.
-En effet, ce dernier ne va pas demander au programme d'enregistrer l'état actuel de la fonction au moment de la
-rappeler, car, aucune expression n'ayant besoin d'être évaluée à l'issue de son exécution, il suffira simplement
-au programme de rappeler la fonction fraîchement en modifiant ses arguments. Ainsi, la Stack est plus préservée
-qu'avec une fonction récursive non-terminale.
+C'est la où le compilateur a été bien pensé. Ce dernier, détectant alors que notre fonction "tail_recursive" pour la prendre en exemple est une fonction récursive terminale, va réorganiser les données. En effet, ce dernier ne va pas demander au programme d'enregistrer l'état actuel de la fonction au moment de la rappeler, car, aucune expression n'ayant besoin d'être évaluée à l'issue de son exécution, il suffira simplement au programme de rappeler la fonction fraîchement en modifiant ses arguments. Ainsi, la Stack est plus préservée qu'avec une fonction récursive non-terminale.
 
 # En quoi on peut hypothétiquement trouver un intérêt à s'y intéresser plus tôt ?
 
