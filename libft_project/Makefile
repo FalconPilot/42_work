@@ -22,8 +22,12 @@ DIR =		libft2/
 LIB =		-L./$(DIR) -lft
 FLAGS =		-Wall -Wextra -Werror -I$(DIR)
 
-SRC =		test_atoi.c		\
-			test_bzero.c
+SRC =		test_atoi.c			\
+			test_bzero.c		\
+			test_isalnum.c		\
+			test_isalpha.c		\
+			test_isascii.c		\
+			test_isdigit.c
 
 $(NAME): header
 	@echo "  ${GRE}+Compilation du programme de test${STD}"

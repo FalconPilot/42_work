@@ -10,49 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "testfuncs.h"
+#include <ctype.h>
+#include <stdio.h>
+#include <libft.h>
 
-int		exall()
+int		test_isascii()
 {
+	int		test;
 	int		diff;
+	int		val;
 
+	test = -24;
 	diff = 0;
-	diff += test_atoi();
-	diff += test_bzero();
-	diff += test_isalnum();
-	diff += test_isalpha();
-	diff += test_isascii();
-	diff += test_isdigit();
+	printf("---Function #5 : ft_isascii---\n\n");
+	printf("For this function, in case of a non-null expected result, ");
+	printf("any non-null result is admited\n\n");
+	while (test < 150)
+	{
+		printf("Input : \\%d\n", test);
+		printf("[R] : %d\n[E] : %d\n\n", ft_isascii(test), isascii(test));
+		val = ((ft_isascii(test)) ? 1 : 0);
+		diff = ((val != isascii(test)));
+		test++;
+	}
 	return (diff);
-}
-
-void	parser(int funcid)
-{
-	int		diff;
-
-	diff = 0;
-	printf("\nTesting acronyms\n[R] = Result, [E] = Expected\n\n");
-	switch(funcid)
-	{
-		case 0: diff += exall(); break;
-		case 1: diff += test_atoi(); break;
-		case 2: diff += test_bzero(); break;
-		case 3: diff += test_isalnum(); break;
-		case 4: diff += test_isalpha(); break;
-		case 5: diff += test_isascii(); break;
-		case 6: diff += test_isdigit(); break;
-		default: printf("#Err[01] : Invalid function ID\n"); return; break;
-	}
-	printf("TOTAL DIFFERENCES : %d\n", diff);
-}
-
-int		main(int argc, char **argv)
-{
-	if (argc != 2)
-	{
-		printf("#Err[00] : Wrong argument count (1 expected)\n");
-		return (1);
-	}
-	parser(atoi(argv[1]));
-	return (0);
 }

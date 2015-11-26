@@ -10,49 +10,47 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "testfuncs.h"
+#include <ctype.h>
+#include <stdio.h>
+#include <libft.h>
 
-int		exall()
+int		diff_alnum(char test, char target)
 {
+	int		val;
 	int		diff;
 
 	diff = 0;
-	diff += test_atoi();
-	diff += test_bzero();
-	diff += test_isalnum();
-	diff += test_isalpha();
-	diff += test_isascii();
-	diff += test_isdigit();
+	while (test <= target)
+	{
+		printf("Input : %c\n", test);
+		printf("[R] : %d\n[E] : %d\n\n", ft_isalnum(test), isalnum(test));
+		val = ((ft_isalnum(test)) ? 1 : 0);
+		diff += (isalnum(test) != val ? 1 : 0);
+		test++;
+	}
 	return (diff);
 }
 
-void	parser(int funcid)
+int		test_isalnum()
 {
+	int		test;
 	int		diff;
 
+	test = '0';
 	diff = 0;
-	printf("\nTesting acronyms\n[R] = Result, [E] = Expected\n\n");
-	switch(funcid)
-	{
-		case 0: diff += exall(); break;
-		case 1: diff += test_atoi(); break;
-		case 2: diff += test_bzero(); break;
-		case 3: diff += test_isalnum(); break;
-		case 4: diff += test_isalpha(); break;
-		case 5: diff += test_isascii(); break;
-		case 6: diff += test_isdigit(); break;
-		default: printf("#Err[01] : Invalid function ID\n"); return; break;
-	}
-	printf("TOTAL DIFFERENCES : %d\n", diff);
-}
-
-int		main(int argc, char **argv)
-{
-	if (argc != 2)
-	{
-		printf("#Err[00] : Wrong argument count (1 expected)\n");
-		return (1);
-	}
-	parser(atoi(argv[1]));
-	return (0);
+	printf("---Function #03 : ft_isalnum---\n\n");
+	printf("For this function, in case of a non-null expected result, ");
+	printf("any non-null result is admited\n\n");
+	diff += diff_alnum('0', '9');
+	diff += diff_alnum('A', 'Z');
+	diff += diff_alnum('a', 'z');
+	printf("Input : \"\\200\"\n");
+	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_isalnum(200), isalnum(200));
+	if (ft_isalnum(200) > 0)
+		diff++;
+	printf("Input : \"\\13\"\n");
+	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_isalnum(13), isalnum(13));
+	if (ft_isalnum(13) > 0)
+		diff++;
+	return (diff);
 }

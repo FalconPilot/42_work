@@ -1,6 +1,7 @@
 
 ### List of libft project functions
 
+0. execute all functions
 1. ft_atoi
 2. ft_bzero
 3. ft_isalnum

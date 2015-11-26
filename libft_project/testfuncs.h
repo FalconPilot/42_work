@@ -7,5 +7,9 @@
 
 int		test_atoi();
 int		test_bzero();
+int		test_isalnum();
+int		test_isalpha();
+int		test_isascii();
+int		test_isdigit();
 
 #endif
