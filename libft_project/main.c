@@ -10,90 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "testfuncs.h"
 #include <ctype.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <strings.h>
-
-#include <libft.h>
-
-/*
- * ft_atoi				ID[01]
- */
-
-void	test_atoi()
-{
-	printf("---Function #01 : ft_atoi---\n\n");
-	printf("Input : \"01234567890\"\n");
-	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi("01234567890"), atoi("01234567890"));
-	printf("Input : \"111bla\"\n");
-	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi("111bla"), atoi("111bla"));
-	printf("Input : \"-5Ab...\"\n");
-	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi("-5Ab..."), atoi("-5Ab..."));
-	printf("Input : \"   97 8\"\n");
-	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi("   97 8"), atoi("   97 8"));
-	printf("Input : \" -550\"\n");
-	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi(" -550"), atoi(" -550"));
-	printf("Input : \"Coucou :D\"\n");
-	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi("Coucou :D"), atoi("Coucou :D"));
-	printf("Input : \"abc13\"\n");
-	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi("abc13"), atoi("abc13"));
-	printf("Input : \'\\200\'\n");
-	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_atoi("\200"), atoi("\200"));
-}
-
-/*
- * ft_bzero				ID[02]
- */
-
-void	bzero_string(void *str, size_t empty, int func)
-{
-	int				i;
-	int				len;
-	unsigned char	*buf;
-
-	i = 0;
-	len = 0;
-	buf = str;
-	while (buf[len])
-		len++;
-	if (func == 1)
-		ft_bzero(str, empty);
-	else
-		bzero(str, empty);
-	while (i <= len)
-	{
-		if (buf[i])
-			printf(" %c|", buf[i]);
-		else
-			printf("\\0|");
-		i++;
-	}
-	printf("\n");
-}
-
-void	test_bzero()
-
-{
-	int		i;
-	char	*str;
-
-	i = 0;
-	printf("---Function #01 : ft_atoi---\n\n");
-	printf("");
-	printf("Input : \"Coucou\"\n");
-	printf("      [1][2][3][4][5][6][7]\n");
-	printf("[R] : ");
-	str = malloc(sizeof(char) * 7);
-	str = strcpy(str, "Coucou");
-	bzero_string(str, 2, 1);
-	printf("[E] : ");
-	free(str);
-	str = malloc(sizeof(char) * 7);
-	str = strcpy(str, "Coucou");
-	bzero_string(str, 2, 2);
-	free(str);
-}
 
 /*
  * ft_isalnum			ID[03]
@@ -137,7 +55,6 @@ void	test_isalnum()
 	printf("[R] : \"%d\"\n[E] : \"%d\"\n\n", ft_isalnum(13), isalnum(13));
 	if (ft_isalnum(13) > 0)
 		diff++;
-	printf("TOTAL DIFFERENCES : %d\n", diff);
 }
 
 /*
@@ -264,10 +181,13 @@ void	test_isdigit()
 
 void	parser(int funcid)
 {
+	int		diff;
+
+	diff = 0;
 	printf("\nTesting acronyms\n[R] = Result, [E] = Expected\n\n");
 	switch(funcid)
 	{
-		case 1: test_atoi(); break;
+		case 1: diff += test_atoi(); break;
 		case 2: test_bzero(); break;
 		case 3: test_isalnum(); break;
 		case 4: test_isalpha(); break;
@@ -275,6 +195,7 @@ void	parser(int funcid)
 		case 6: test_isdigit(); break;
 		default: printf("#Err[01] : Invalid function ID\n");
 	}
+	printf("TOTAL DIFFERENCES : %d\n", diff);
 }
 
 /*
