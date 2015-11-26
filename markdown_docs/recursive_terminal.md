@@ -20,6 +20,8 @@ fonction ! Un exemple plus parlant.
 
 *•Une fonction récursive non-terminale*
 
+`n étant le nombre à afficher`
+
     void    non_tail_recursive(int n)
     {
     	    if (i > 9)
@@ -34,6 +36,9 @@ fonction ! Un exemple plus parlant.
     }
 
 *•Une fonction récursive terminale*
+
+`n étant le nombre à afficher`
+`len est égal à 10^(ft_nbrlen)`
 
     void    tail_recursive(int n, int len)
     {
