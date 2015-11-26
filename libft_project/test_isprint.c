@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_isascii.c                                     :+:      :+:    :+:   */
+/*   test_isprint.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 07:52:41 by rpallies          #+#    #+#             */
-/*   Updated: 2015/11/26 10:01:23 by rpallies         ###   ########.fr       */
+/*   Created: 2015/11/26 09:12:59 by rpallies          #+#    #+#             */
+/*   Updated: 2015/11/26 09:14:02 by rpallies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <libft.h>
 
-int		test_isascii(void)
+int		test_isprint(void)
 {
 	int		test;
 	int		diff;
@@ -22,15 +22,15 @@ int		test_isascii(void)
 
 	test = -24;
 	diff = 0;
-	printf("---Function #05 : ft_isascii---\n\n");
+	printf("---Function #07 : ft_isprint---\n\n");
 	printf("For this function, in case of a non-null expected result, ");
 	printf("any non-null result is admited\n\n");
 	while (test < 150)
 	{
 		printf("Input : \\%d\n", test);
-		printf("[R] : %d\n[E] : %d\n\n", ft_isascii(test), isascii(test));
-		val = ((ft_isascii(test)) ? 1 : 0);
-		diff = ((val != isascii(test)));
+		printf("[R] : %d\n[E] : %d\n\n", ft_isprint(test), isprint(test));
+		val = ((ft_isprint(test)) ? 1 : 0);
+		diff = ((val != isprint(test)));
 		test++;
 	}
 	return (diff);

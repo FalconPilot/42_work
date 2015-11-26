@@ -1,30 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/26 08:20:54 by rpallies          #+#    #+#             */
-/*   Updated: 2015/11/26 13:37:25 by rpallies         ###   ########.fr       */
+/*   Created: 2015/11/26 09:00:54 by rpallies          #+#    #+#             */
+/*   Updated: 2015/11/26 12:01:56 by rpallies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-char	*ft_strcat(char *s1, const char *s2)
+int		int_len(int n, int func)
 {
-	int		i;
-	int		i2;
+	int		len;
 
-	i = ft_strlen(s1);
-	i2 = 0;
-	while (s2[i2])
+	len = 1;
+	while (n > 9)
 	{
-		s1[i] = s2[i2];
-		i++;
-		i2++;
+		n /= 10;
+		(func ? len *= 10 : len++);
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (len);
+}
+
+void	fill_str(char *str, int n, int size, int i)
+{
+	str[i] = ((n / size) % 10 + 48);
+	if (size > 9)
+		fill_str(str, n, size / 10, i + 1);
+}
+
+char	*ft_itoa(int n)
+{
+	int		len;
+	char	*str;
+
+	len = int_len(n, 0);
+	str = malloc(sizeof(char) * len + 1);
+	fill_str(str, n, int_len(n, 1), 0);
+	return (str);
 }

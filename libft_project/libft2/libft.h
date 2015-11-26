@@ -6,7 +6,7 @@
 /*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:52:42 by rpallies          #+#    #+#             */
-/*   Updated: 2015/11/24 18:41:32 by rpallies         ###   ########.fr       */
+/*   Updated: 2015/11/26 09:12:12 by rpallies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int			ft_isalpha(int c);
 int			ft_isascii(int c);
 int			ft_isdigit(int c);
 int			ft_isprint(int c);
+char		*ft_itoa(int n);
 void		*ft_memalloc(size_t size);
 void		ft_memdel(void **ap);
 void		*ft_memset(void *b, int c, size_t len);
@@ -39,11 +40,14 @@ void		ft_strclr(char *s);
 int			ft_strcmp(const char *s1, const char *s2);
 void		ft_strdel(char **as);
 char		*ft_strdup(const char *s1);
+int			ft_strequ(const char *s1, const char *s2);
+void		ft_striter(char *s, void (*f)(char*));
 size_t		ft_strlcat(char *str, const char *src, size_t size);
 size_t		ft_strlen(const char *s);
 char		*ft_strmap(const char *s, char (*f)(char));
 char		*ft_strncat(char *s1, const char *s2, size_t n);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
+int			ft_strnequ(const char *s1, const char *s2, size_t n);
 char		*ft_strnew(size_t size);
 int			ft_toupper(int c);
 int			ft_tolower(int c);

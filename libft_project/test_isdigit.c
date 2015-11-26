@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maintest.c                                         :+:      :+:    :+:   */
+/*   test_isdigit.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 14:40:12 by rpallies          #+#    #+#             */
-/*   Updated: 2015/11/24 19:33:08 by rpallies         ###   ########.fr       */
+/*   Created: 2015/11/26 08:19:42 by rpallies          #+#    #+#             */
+/*   Updated: 2015/11/26 12:50:18 by rpallies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		diff_digit(char test, char target)
 	return (diff);
 }
 
-int		test_isdigit()
+int		test_isdigit(void)
 {
 	int		test;
 	int		diff;

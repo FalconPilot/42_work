@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maintest.c                                         :+:      :+:    :+:   */
+/*   test_isalnum.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 14:40:12 by rpallies          #+#    #+#             */
-/*   Updated: 2015/11/24 19:33:08 by rpallies         ###   ########.fr       */
+/*   Created: 2015/11/26 07:52:19 by rpallies          #+#    #+#             */
+/*   Updated: 2015/11/26 08:18:09 by rpallies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		diff_alnum(char test, char target)
 	return (diff);
 }
 
-int		test_isalnum()
+int		test_isalnum(void)
 {
 	int		test;
 	int		diff;

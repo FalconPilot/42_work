@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   maintest.c                                         :+:      :+:    :+:   */
+/*   test_isalpha.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 14:40:12 by rpallies          #+#    #+#             */
-/*   Updated: 2015/11/24 19:33:08 by rpallies         ###   ########.fr       */
+/*   Created: 2015/11/26 07:52:26 by rpallies          #+#    #+#             */
+/*   Updated: 2015/11/26 08:17:58 by rpallies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		diff_alpha(char test, char target)
 	return (diff);
 }
 
-int		test_isalpha()
+int		test_isalpha(void)
 {
 	int		test;
 	int		diff;

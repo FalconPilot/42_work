@@ -6,7 +6,7 @@
 #    By: rpallies <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 12:56:26 by rpallies          #+#    #+#              #
-#    Updated: 2015/11/24 18:40:30 by rpallies         ###   ########.fr        #
+#    Updated: 2015/11/26 09:44:37 by rpallies         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC =			ft_atoi.c			\
 				ft_isascii.c		\
 				ft_isdigit.c		\
 				ft_isprint.c		\
+				ft_itoa.c			\
 				ft_memalloc.c		\
 				ft_memdel.c			\
 				ft_memset.c			\
@@ -43,10 +44,13 @@ SRC =			ft_atoi.c			\
 				ft_strcmp.c			\
 				ft_strdel.c			\
 				ft_strdup.c			\
+				ft_strequ.c			\
+				ft_striter.c		\
 				ft_strlen.c			\
 				ft_strmap.c			\
 				ft_strncat.c		\
 				ft_strncmp.c		\
+				ft_strnequ.c		\
 				ft_strnew.c			\
 				ft_tolower.c		\
 				ft_toupper.c

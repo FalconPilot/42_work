@@ -6,13 +6,14 @@
 #    By: rpallies <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 15:04:04 by rpallies          #+#    #+#              #
-#    Updated: 2015/11/24 17:36:39 by rpallies         ###   ########.fr        #
+#    Updated: 2015/11/26 12:40:58 by rpallies         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 RED =		\033[31m
 GRE =		\033[32m
 YEL =		\033[33m
+BLU =		\033[34m
 STD =		\033[39m
 
 NAME =		debug_program
@@ -27,15 +28,31 @@ SRC =		test_atoi.c			\
 			test_isalnum.c		\
 			test_isalpha.c		\
 			test_isascii.c		\
-			test_isdigit.c
+			test_isdigit.c		\
+			test_isprint.c
 
-$(NAME): header
-	@echo "  ${GRE}+Compilation du programme de test${STD}"
-	@gcc $(FLAGS) $(PROG) $(SRC) $(LIB) -o $(NAME)
+OBJ =		$(SRC:.c=.o)
+
+$(NAME): header $(OBJ)
+	@echo "  ${BLU}+Compilation :${STD}" $@
+	@gcc $(FLAGS) $(PROG) $(OBJ) $(LIB) -o $(NAME)
+	@echo "  ${YEL}Compilation terminee !${STD}"
+
+%.o: %.c
+	@echo "  ${GRE}+Compilation :${STD}" $^
+	@gcc $(FLAGS) -c $^
 
 clean: header
+	@echo "  ${RED}-Nettoyage des fichiers objet${STD}"
+	@rm -f $(OBJ)
+
+fclean: clean
 	@echo "  ${RED}-Nettoyage du programme de test${STD}"
 	@rm -f $(NAME)
+
+all: $(NAME)
+
+re: clean all
 
 header:
 	@clear

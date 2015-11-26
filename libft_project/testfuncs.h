@@ -1,15 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   testfuncs.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/11/26 09:15:56 by rpallies          #+#    #+#             */
+/*   Updated: 2015/11/26 09:16:27 by rpallies         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-
-#ifndef TEST_FUNCS_H
-# define TEST_FUNCS_H
+#ifndef TESTFUNCS_H
+# define TESTFUNCS_H
 # include <libft.h>
 # include <stdio.h>
 
-int		test_atoi();
-int		test_bzero();
-int		test_isalnum();
-int		test_isalpha();
-int		test_isascii();
-int		test_isdigit();
+int		test_atoi(void);
+int		test_bzero(void);
+int		test_isalnum(void);
+int		test_isalpha(void);
+int		test_isascii(void);
+int		test_isdigit(void);
+int		test_isprint(void);
 
 #endif
