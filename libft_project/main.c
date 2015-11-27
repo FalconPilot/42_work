@@ -34,6 +34,8 @@ int		exall(void)
 	diff += test_isdigit();
 	diff += test_isprint();
 	diff += test_strcat();
+	diff += test_strstr();
+	diff += test_strncat();
 	return (diff);
 }
 
@@ -53,7 +55,9 @@ void	parser(int funcid)
 		case 5: diff += test_isascii(); break ;
 		case 6: diff += test_isdigit(); break ;
 		case 7: diff += test_isprint(); break ;
-		case 14: diff += test_strcat(); break ;
+		case 8: diff += test_strcat(); break ;
+		case 9: diff += test_strstr(); break ;
+		case 10: diff += test_strncat(); break ;
 		default: printf("#Err[01] : Invalid function ID\n"); break ;
 	}
 	printf("TOTAL DIFFERENCES : %d\n", diff);

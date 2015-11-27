@@ -8,4 +8,6 @@
 5.  ft_isascii
 6.  ft_isdigit
 7.  ft_isprint
-14. ft_strcat
+8.  ft_strcat
+9.  ft_strstr
+10. ft_strncat

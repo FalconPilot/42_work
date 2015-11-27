@@ -53,6 +53,7 @@ SRC =			ft_atoi.c			\
 				ft_strncmp.c		\
 				ft_strnequ.c		\
 				ft_strnew.c			\
+				ft_strstr.c			\
 				ft_tolower.c		\
 				ft_toupper.c
 
