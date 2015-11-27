@@ -29,7 +29,8 @@ SRC =		test_atoi.c			\
 			test_isalpha.c		\
 			test_isascii.c		\
 			test_isdigit.c		\
-			test_isprint.c
+			test_isprint.c		\
+			test_strcat.c
 
 OBJ =		$(SRC:.c=.o)
 

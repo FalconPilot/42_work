@@ -22,5 +22,6 @@ int		test_isalpha(void);
 int		test_isascii(void);
 int		test_isdigit(void);
 int		test_isprint(void);
+int		test_strcat(void);
 
 #endif
