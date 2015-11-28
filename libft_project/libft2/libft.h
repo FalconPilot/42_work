@@ -25,6 +25,7 @@ int			ft_isdigit(int c);
 int			ft_isprint(int c);
 char		*ft_itoa(int n);
 void		*ft_memalloc(size_t size);
+void		*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void		*ft_memcpy(void *dst, void *src, size_t n);
 void		ft_memdel(void **ap);
 void		*ft_memset(void *b, int c, size_t len);

@@ -29,6 +29,7 @@ SRC =			ft_atoi.c			\
 				ft_isprint.c		\
 				ft_itoa.c			\
 				ft_memalloc.c		\
+				ft_memccpy.c		\
 				ft_memcpy.c			\
 				ft_memdel.c			\
 				ft_memset.c			\
