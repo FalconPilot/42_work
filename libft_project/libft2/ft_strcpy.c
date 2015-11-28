@@ -16,6 +16,7 @@ char	*ft_strcpy(char *dst, const char *src)
 {
 	int		i;
 
+	ft_bzero(dst, (size_t)ft_strlen(src));
 	while (src[i])
 	{
 		dst[i] = src[i];
