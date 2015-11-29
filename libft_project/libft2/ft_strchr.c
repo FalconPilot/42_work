@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	char	*str;
 
 	str = s;
 	while (*s != (char)c)
 		s++;
-	return ((char*)s);
+	return (s);
 }
