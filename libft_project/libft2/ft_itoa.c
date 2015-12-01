@@ -37,8 +37,19 @@ char	*ft_itoa(int n)
 	int		len;
 	char	*str;
 
+	if (n == -2147483648)
+	{
+		str = ft_memalloc(12);
+		str = ft_strcpy(str, "-2147483648\0");
+		if (!str)
+			return (NULL);
+		return (str);
+	}
 	len = int_len(n, 0);
-	str = malloc(sizeof(char) * len + 1);
+	str = ft_memalloc(len + 1);
+	if (!str)
+		return (NULL);
 	fill_str(str, n, int_len(n, 1), 0);
+	str[len] = '\0';
 	return (str);
 }

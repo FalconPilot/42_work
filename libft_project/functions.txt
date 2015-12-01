@@ -11,3 +11,4 @@
 8.  ft_strcat
 9.  ft_strstr
 10. ft_strncat
+11. ft_strlen

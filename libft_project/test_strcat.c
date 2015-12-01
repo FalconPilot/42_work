@@ -35,6 +35,7 @@ int		test_strcat(void)
 	int		diff;
 
 	diff = 0;
+	printf("---Function #09 : ft_strcat---\n\n");
 	diff += strcat_op("Camel", "debbiche", 30);
 	diff += strcat_op("Look", "atme", 5);
 	return (diff);

@@ -14,5 +14,5 @@
 
 void	ft_putchar(char c)
 {
-	write(STDIN_FILENO, &c, 1);
+	write(STDOUT_FILENO, &c, 1);
 }

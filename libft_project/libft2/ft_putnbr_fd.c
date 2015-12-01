@@ -12,11 +12,11 @@
 
 #include <libft.h>
 
-void	putnbr_loop(int n, int len, int fd)
+void	putnbr_loop_fd(int n, int len, int fd)
 {
 	ft_putchar_fd((n / len) % 10 + 48, fd);
 	if (len > 9)
-		putnbr_loop(n, len / 10, fd);
+		putnbr_loop_fd(n, len / 10, fd);
 }
 
 void	ft_putnbr_fd(int n, int fd)
@@ -24,6 +24,11 @@ void	ft_putnbr_fd(int n, int fd)
 	int		len;
 	int		tmp;
 
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
 	len = 1;
 	if (n < 0)
 	{
@@ -36,5 +41,5 @@ void	ft_putnbr_fd(int n, int fd)
 		tmp /= 10;
 		len *= 10;
 	}
-	putnbr_loop(n, len, fd);
+	putnbr_loop_fd(n, len, fd);
 }

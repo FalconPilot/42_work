@@ -21,7 +21,7 @@ int		ft_atoi(const char *str)
 	num = 0;
 	sym = 1;
 	i = 0;
-	while (str[i] == 32 || str[i] == 9)
+	while (str[i] >= 0 && str[i] <= 32)
 		i++;
 	if (str[i] == '-')
 	{

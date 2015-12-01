@@ -12,7 +12,7 @@
 
 #include <libft.h>
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	int		i;
 	int		size;
@@ -20,7 +20,9 @@ char	*strdup(const char *s1)
 
 	i = 0;
 	size = ft_strlen(s1);
-	copy = malloc(sizeof(char) * size + 1);
+	copy = ft_memalloc(size + 1);
+	if (!copy)
+		return (NULL);
 	while (i < size)
 	{
 		copy[i] = s1[i];

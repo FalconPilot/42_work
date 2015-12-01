@@ -12,10 +12,11 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
+	const char	*str;
 
 	str = s;
-	while (*s != (char)c)
-		s++;
-	return (s);
+	while (*str != (const char)c)
+		str++;
+	s = str;
+	return ((char*)s);
 }

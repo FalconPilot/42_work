@@ -9,11 +9,13 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	i = 0;
 	copy = dst;
 	s = src;
-	while (copy[i] && i < n && s[i] != (const char)c)
+	while (copy[i] && i < n && s[i - 1] != (const unsigned char)c)
 	{
 		copy[i] = s[i];
 		i++;
 	}
-	dst = copy;
+	if (i == n ||copy[i])
+		return (NULL);
+	dst = copy + i + 1;
 	return (dst);
 }

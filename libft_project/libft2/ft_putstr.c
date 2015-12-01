@@ -19,7 +19,7 @@ void	ft_putstr(const char *s)
 	i = 0;
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		ft_putchar((char)s[i]);
 		i++;
 	}
 }

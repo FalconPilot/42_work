@@ -23,7 +23,12 @@ void	ft_putnbr(int n)
 {
 	int		len;
 	int		tmp;
-
+	
+	if (n == -2147483648)
+	{
+		ft_putstr("-2147483648");
+		return ;
+	}
 	len = 1;
 	if (n < 0)
 	{
