@@ -43,6 +43,7 @@ C'est aussi simple que ça.
 à faire. C'est un peu obscur, mais c'est normal. Imaginons un Makefile en pseudo-code. Sachez que dans un Makefile,
 lancer "make" seulement lance par défaut la règle placée le plus haut dans le Makefile.
 
+    
     compil: librairie
     
     librairie: fichiers_objet
@@ -51,6 +52,7 @@ lancer "make" seulement lance par défaut la règle placée le plus haut dans le
     
     fichiers_objet: fichiers_source
       compiler le fichier source
+      
 
 Que peut-on analyser ici ? Eh bien une première règle, "compil". Une fois appelée, elle va vérifier si la règle
 "Librairie" a quelque chose à faire. Cette dernière va vérifier si la règle "fichiers_objet" a quelque chose à faire.
