@@ -23,7 +23,7 @@ int		atoi_op(char *test)
 {
 	printf("Input : \"%s\"\n", test);
 	printf("[R] : %d\n[E] : %d\n\n", ft_atoi(test), atoi(test));
-	return (ft_atoi(test) != atoi(test));
+	return (is_diff(test));
 }
 
 int		test_atoi(void)
@@ -36,9 +36,11 @@ int		test_atoi(void)
 	diff += atoi_op("-42");
 	diff += atoi_op("   150");
 	diff += atoi_op("    6ba9");
+	diff += atoi_op ("   +500");
 	diff += atoi_op("   5  r7");
 	diff += atoi_op("15-5");
 	diff += atoi_op("  -42");
 	diff += atoi_op("Coucou :D");
+	diff += atoi_op("+5240");
 	return (diff);
 }

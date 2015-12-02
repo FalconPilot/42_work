@@ -19,23 +19,23 @@ int		ft_atoi(const char *str)
 	int		sym;
 
 	num = 0;
-	sym = 1;
+	sym = 0;
 	i = 0;
 	while (str[i] >= 0 && str[i] <= 32)
 		i++;
 	if (str[i] == '-')
 	{
-		sym *= -1;
+		sym = 1;
 		i++;
 	}
-	while (str[i])
+	else if (str[i] == '+')
+		i++;
+	while (str[i] && ft_isdigit(str[i]))
 	{
-		if (!ft_isdigit(str[i]))
-			return (num * sym);
 		num += (str[i] - '0');
 		if (str[i + 1] && ft_isdigit(str[i + 1]))
 			num *= 10;
 		i++;
 	}
-	return (num * sym);
+	return (sym ? -num : num);
 }

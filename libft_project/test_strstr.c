@@ -1,5 +1,5 @@
-
 #include <libft.h>
+#include <stdio.h>
 
 int		test_strstr(void)
 {
