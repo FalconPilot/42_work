@@ -1,0 +1,5 @@
+## Error IDs
+
+[00] : Wrong argument count (1 expected)
+[01] : File not found
+[02] : An invalid function was used
