@@ -12,12 +12,17 @@
 
 #include <libft.h>
 
+char	index_skip(const char c)
+{
+	return (c >= 0 && c <= 32);
+}
+
 int		index_ini(const char *str)
 {
 	int		i;
 	
 	i = 0;
-	while (str[i] >= 0 && str[i] <= 32)
+	while (index_skip(str[i]))
 		i++;
 	return (i);
 }

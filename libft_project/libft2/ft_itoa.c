@@ -17,6 +17,8 @@ int		int_len(int n, int func)
 	int		len;
 
 	len = 1;
+	if (n < 0)
+		n *= -1;
 	while (n > 9)
 	{
 		n /= 10;
@@ -32,6 +34,21 @@ void	fill_str(char *str, int n, int size, int i)
 		fill_str(str, n, size / 10, i + 1);
 }
 
+void	begin_filling(char *str, int n, int len)
+{
+	int		i;
+
+	i = 0;
+	if (n < 0)
+	{
+		str[0] = '-';
+		n *= -1;
+		i++;
+	}
+	fill_str(str, n, int_len(n, 1), i);
+	str[len] = '\0';
+}
+
 char	*ft_itoa(int n)
 {
 	int		len;
@@ -45,11 +62,10 @@ char	*ft_itoa(int n)
 			return (NULL);
 		return (str);
 	}
-	len = int_len(n, 0);
+	len = int_len(n, 0) + (n < 0 ? 1 : 0);
 	str = ft_memalloc(len + 1);
 	if (!str)
 		return (NULL);
-	fill_str(str, n, int_len(n, 1), 0);
-	str[len] = '\0';
+	begin_filling(str, n, len);
 	return (str);
 }
