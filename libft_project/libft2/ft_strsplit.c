@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/12/04 14:17:31 by rpallies          #+#    #+#             */
+/*   Updated: 2015/12/04 14:17:35 by rpallies         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libft.h>
 
 int		word_count(const char *s, char c)
@@ -18,8 +30,6 @@ int		word_count(const char *s, char c)
 	}
 	return (words);
 }
-
-// *coucou***les***amis***
 
 char	**ft_strsplit(const char *s, char c)
 {

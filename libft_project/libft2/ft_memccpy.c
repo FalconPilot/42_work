@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/12/04 13:53:00 by rpallies          #+#    #+#             */
+/*   Updated: 2015/12/04 15:20:44 by rpallies         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libft.h>
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
@@ -9,13 +21,12 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	i = 0;
 	copy = dst;
 	s = src;
-	while (copy[i] && i < n && s[i - 1] != (const unsigned char)c)
+	while (i < n)
 	{
 		copy[i] = s[i];
+		if (copy[i] == (unsigned char)c)
+			return (dst + i);
 		i++;
 	}
-	if (i == n ||copy[i])
-		return (NULL);
-	dst = copy + i + 1;
-	return (dst);
+	return (NULL);
 }

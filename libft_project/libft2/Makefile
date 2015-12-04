@@ -6,7 +6,7 @@
 #    By: rpallies <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 12:56:26 by rpallies          #+#    #+#              #
-#    Updated: 2015/11/26 09:44:37 by rpallies         ###   ########.fr        #
+#    Updated: 2015/12/04 14:56:36 by rpallies         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ SRC =			ft_atoi.c			\
 				ft_strnew.c			\
 				ft_strsplit.c		\
 				ft_strstr.c			\
+				ft_strnstr.c		\
 				ft_strsub.c			\
 				ft_strtrim.c		\
 				ft_tolower.c		\
@@ -95,6 +96,11 @@ header:
 	@echo "${STD}"
 
 all: $(NAME)
+
+norme: header
+	@echo "${GRE}  Verification de la norme${STD}\n"
+	@norminette $(SRC) libft.h
+	@echo "${RED}  \nTotal errors :${STD}" $(shell norminette $(SRC) libft.h | grep -v "Norme" | wc -l)
 
 clean: header
 	@echo " ${RED}-Nettoyage des fichiers objet...${STD}"

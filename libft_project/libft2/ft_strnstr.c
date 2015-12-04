@@ -1,22 +1,40 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/12/04 14:10:37 by rpallies          #+#    #+#             */
+/*   Updated: 2015/12/04 15:19:40 by rpallies         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libft.h>
 
-char	*strstr(const char *s1, const char *s2, size_t n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	int		i;
+	int		i2;
 	int		len;
-	char	*dst;
+	char	c;
 
 	i = 0;
-	dst = (char*)s1;
+	i2 = 0;
 	len = ft_strlen(s2);
-	if (s2[0])
+	if (len == 0)
 		return ((char*)s1);
-	while (dst)
+	while (s1[i] && (size_t)i < n)
 	{
-		if (!ft_strncmp(s1, s2, n)  n)
-			return (dst);
-		else
-			dst++;
+		c = s1[i];
+		while (c == s2[i2])
+		{
+			if (s2[i])
+				return ((char*)s1 + i);
+			i2++;
+		}
+		i2 = 0;
+		s1++;
 	}
 	return (NULL);
 }

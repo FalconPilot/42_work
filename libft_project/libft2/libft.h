@@ -6,7 +6,7 @@
 /*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 12:52:42 by rpallies          #+#    #+#             */
-/*   Updated: 2015/11/26 09:12:12 by rpallies         ###   ########.fr       */
+/*   Updated: 2015/12/04 14:56:01 by rpallies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ char		*ft_strncat(char *s1, const char *s2, size_t n);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_strnequ(const char *s1, const char *s2, size_t n);
 char		*ft_strnew(size_t size);
+char		*ft_strnstr(const char *s1, const char *s2, size_t n);
 char		**ft_strsplit(const char *s, char c);
 char		*ft_strstr(const char *s1, const char *s2);
 char		*ft_strsub(const char *s, unsigned int start, size_t len);

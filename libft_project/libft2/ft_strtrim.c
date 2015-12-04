@@ -1,8 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/12/04 14:10:22 by rpallies          #+#    #+#             */
+/*   Updated: 2015/12/04 14:19:52 by rpallies         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <libft.h>
 
 int		is_blank(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\n');
+}
+
+int		detect_blanks(const char *s)
+{
+	int		i;
+
+	i = 0;
+	while (is_blank(s[i]))
+		i++;
+	return (i);
 }
 
 char	*ft_strtrim(const char *s)
@@ -12,10 +34,8 @@ char	*ft_strtrim(const char *s)
 	int			len;
 	char		*copy;
 
-	b = 0;
+	b = detect_blanks(s);
 	len = 0;
-	while (is_blank(s[b]))
-		b++;
 	i = b;
 	while (s[i])
 	{

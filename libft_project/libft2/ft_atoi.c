@@ -6,7 +6,7 @@
 /*   By: rpallies <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:39:29 by rpallies          #+#    #+#             */
-/*   Updated: 2015/11/24 16:49:01 by rpallies         ###   ########.fr       */
+/*   Updated: 2015/12/04 13:52:45 by rpallies         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	index_skip(const char c)
 int		index_ini(const char *str)
 {
 	int		i;
-	
+
 	i = 0;
 	while (index_skip(str[i]))
 		i++;
