@@ -12,6 +12,16 @@
 
 #include <libft.h>
 
+int		index_ini(const char *str)
+{
+	int		i;
+	
+	i = 0;
+	while (str[i] >= 0 && str[i] <= 32)
+		i++;
+	return (i);
+}
+
 int		ft_atoi(const char *str)
 {
 	int		i;
@@ -20,9 +30,7 @@ int		ft_atoi(const char *str)
 
 	num = 0;
 	sym = 0;
-	i = 0;
-	while (str[i] >= 0 && str[i] <= 32)
-		i++;
+	i = index_ini(str);
 	if (str[i] == '-')
 	{
 		sym = 1;
