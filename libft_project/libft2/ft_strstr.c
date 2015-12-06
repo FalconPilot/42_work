@@ -27,14 +27,14 @@ char	*ft_strstr(const char *s1, const char *s2)
 	while (s1[i])
 	{
 		c = s1[i];
-		while (c == s2[i2])
+		while (s1[i + i2] == s2[i2])
 		{
-			if (s2[i])
+			if (s2[i2])
 				return ((char*)s1 + i);
 			i2++;
 		}
 		i2 = 0;
-		s1++;
+		i++;
 	}
 	return (NULL);
 }
