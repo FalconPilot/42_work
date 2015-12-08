@@ -17,23 +17,24 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	int		i;
 	int		i2;
 	int		len;
-	char	c;
 
 	i = 0;
 	i2 = 0;
 	len = ft_strlen(s2);
-	if (len == 0)
+	if (!len)
 		return ((char*)s1);
 	while (s1[i] && (size_t)i < n)
 	{
-		c = s1[i];
-		while (s1[i + i2] == s2[i2])
+		if (!s1[i])
+			return (NULL);
+		else if (s1[i] == s2[i2])
 		{
-			if (s2[i2])
-				return ((char*)s1 + i);
+			if ((i2 + 1) == len)
+				return ((char*)(s1 + i - i2));
 			i2++;
 		}
-		i2 = 0;
+		else
+			i2 = 0;
 		i++;
 	}
 	return (NULL);

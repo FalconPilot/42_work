@@ -23,7 +23,7 @@ int		word_count(const char *s, char c)
 	{
 		while (s[i] == (const char)c && s[i])
 			i++;
-		if (s[i])
+		if (s[i] != (const char)c && s[i])
 			words++;
 		while (s[i] != (const char)c && s[i])
 			i++;
@@ -31,31 +31,49 @@ int		word_count(const char *s, char c)
 	return (words);
 }
 
+char	**split_create(const char *s, char c, char **tab)
+{
+	int		i;
+	int		i2;
+	int		len;
+
+	i = 0;
+	i2 = 0;
+	len = 0;
+	while (s[i])
+	{
+		while (s[i] == (const char)c && s[i])
+			i++;
+		while (s[i] != (const char)c && s[i])
+		{
+			i++;
+			len++;
+		}
+		if (!s[i] && !len)
+			break ;
+		tab[i2] = ft_strsub(s, (i - len), len);
+		i2++;
+		len = 0;
+	}
+	tab[i2] = NULL;
+	return (tab);
+}
+
 char	**ft_strsplit(const char *s, char c)
 {
 	int		i;
+	int		i2;
 	int		len;
 	char	**tab;
 
+	i = 0;
+	i2 = 0;
+	len = 0;
 	if (!s)
 		return (NULL);
-	i = 0;
-	len = word_count(s, c);
-	tab = (char**)malloc(sizeof(*tab) * (len + 1));
-	while (s[i])
-	{
-		len = 0;
-		while (s[i] == (const char)c && s[i])
-			i++;
-		while (s[i + len] != (const char)c && s[i + len])
-			len++;
-		if (len > 0 && s[i])
-		{
-			*tab = ft_strsub(s, i, len);
-			tab++;
-			i += len;
-		}
-	}
-	**tab = '\0';
+	tab = (char**)malloc(sizeof(char*) * (word_count(s, c) + 1));
+	if (!tab)
+		return (NULL);
+	tab = split_create(s, c, tab);
 	return (tab);
 }

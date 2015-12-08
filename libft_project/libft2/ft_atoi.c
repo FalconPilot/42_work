@@ -14,7 +14,7 @@
 
 char	index_skip(const char c)
 {
-	return (c >= 0 && c <= 32);
+	return ((c >= 9 && c <= 13) || c == ' ');
 }
 
 int		index_ini(const char *str)

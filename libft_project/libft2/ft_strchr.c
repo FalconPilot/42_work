@@ -10,13 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libft.h>
+
 char	*ft_strchr(const char *s, int c)
 {
 	const char	*str;
 
 	str = s;
-	while (*str != (const char)c)
+	while (*str != (const char)c && ft_isascii(c))
+	{
+		if (!*str)
+			return (NULL);
 		str++;
+	}
 	s = str;
 	return ((char*)s);
 }

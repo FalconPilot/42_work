@@ -12,21 +12,40 @@
 
 #include <libft.h>
 
+char	*inc_pointer(char *s1, size_t tmp)
+{
+	while (*s1 && tmp)
+	{
+		s1++;
+		tmp--;
+	}
+	return (s1);
+}
+
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	size_t	i2;
+	char	*s1;
+	char	*s2;
+	size_t	len;
+	size_t	tmp;
 
-	i = 0;
-	while (dst[i] && i < size)
-		i++;
-	i2 = i;
-	while (i < size - 1 && src[i - i2])
+	tmp = size;
+	s1 = dst;
+	s2 = (char*)src;
+	s1 = inc_pointer(s1, tmp);
+	len = (size_t)(s1 - dst);
+	tmp = size - len;
+	if (!tmp)
+		return (len + ft_strlen(s2));
+	while (*s2)
 	{
-		dst[i] = src[i - i2];
-		i++;
+		if (tmp != 1)
+		{
+			*s1++ = *s2;
+			tmp--;
+		}
+		s2++;
 	}
-	if (i2 < size)
-		dst[i] = '\0';
-	return (i);
+	*s1 = '\0';
+	return (len + (s2 - src));
 }
