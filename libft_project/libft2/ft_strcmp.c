@@ -19,13 +19,13 @@ int		ft_strcmp(const char *s1, const char *s2)
 	ret = 0;
 	while (s1[i])
 	{
-		ret += (unsigned const char)s1[i];
+		ret += (unsigned char)s1[i];
 		i++;
 	}
 	i = 0;
 	while (s2[i])
 	{
-		ret -= (unsigned const char)s2[i];
+		ret -= (unsigned char)s2[i];
 		i++;
 	}
 	return (ret);

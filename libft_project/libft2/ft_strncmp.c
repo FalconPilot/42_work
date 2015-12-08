@@ -21,13 +21,13 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 	ret = 0;
 	while (s1[i] && i < n)
 	{
-		ret += s1[i];
+		ret += (unsigned char)s1[i];
 		i++;
 	}
 	i = 0;
 	while (s2[i] && i < n)
 	{
-		ret -= s2[i];
+		ret -= (unsigned char)s2[i];
 		i++;
 	}
 	return (ret);

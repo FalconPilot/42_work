@@ -22,7 +22,7 @@ int		detect_blanks(const char *s)
 	int		i;
 
 	i = 0;
-	while (is_blank(s[i]))
+	while (is_blank(s[i]) && s[i])
 		i++;
 	return (i);
 }
@@ -42,12 +42,13 @@ char	*ft_strtrim(const char *s)
 		len++;
 		i++;
 	}
-	while (is_blank(s[i - 1]))
+	i--;
+	while (is_blank(s[i]) && len > 0)
 	{
 		len--;
 		i--;
 	}
-	copy = ft_memalloc(len + 1);
+	copy = (char*)malloc(sizeof(char) * (len + 1));
 	if (!copy)
 		return (NULL);
 	copy = ft_memcpy(copy, (char*)s + b, len);
