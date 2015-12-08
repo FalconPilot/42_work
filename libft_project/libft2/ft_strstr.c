@@ -17,7 +17,6 @@ char	*ft_strstr(const char *s1, const char *s2)
 	int		i;
 	int		i2;
 	int		len;
-	char	c;
 
 	i = 0;
 	i2 = 0;
@@ -26,11 +25,12 @@ char	*ft_strstr(const char *s1, const char *s2)
 		return ((char*)s1);
 	while (s1[i])
 	{
-		c = s1[i];
 		while (s1[i + i2] == s2[i2])
 		{
 			if (s2[i2])
 				return ((char*)s1 + i);
+			else if (s1[i + i2])
+				return (NULL);
 			i2++;
 		}
 		i2 = 0;
