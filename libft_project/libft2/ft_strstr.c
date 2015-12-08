@@ -25,16 +25,11 @@ char	*ft_strstr(const char *s1, const char *s2)
 		return ((char*)s1);
 	while (s1[i])
 	{
-		if (!s1[i])
-			return (NULL);
-		else if (s1[i] == s2[i2])
-		{
-			if (i2 + 1 == len)
-				return ((char*)(s1 + i - i2));
+		while (s1[i + i2] == s2[i2] && s1[i + i2] && s2[i2])
 			i2++;
-		}
-		else
-			i2 = 0;
+		if (!s2[i2])
+			return ((char*)(s1 + i));
+		i2 = 0;
 		i++;
 	}
 	return (NULL);
