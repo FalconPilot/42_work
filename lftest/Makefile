@@ -22,7 +22,9 @@ IDIR =		$(LDIR)
 
 SDIR =		./srcs/
 SRCS =		test_atoi.c				\
-			test_isdigit.c
+			test_isdigit.c			\
+			test_isalpha.c			\
+			test_isalnum.c
 
 ODIR =		./objs/
 OBJS =		$(SRCS:.c=.o)
@@ -43,7 +45,7 @@ program: $(OBCC)
 
 libcomp:
 	@echo "${GRE} +Compiling your Libft library...${STD}"
-	@cd $(LDIR) && make re
+	@cd $(LDIR) && make
 
 $(ODIR)%.o: $(SDIR)%.c
 	@echo "${GRE} +Compilation :${STD}" $^

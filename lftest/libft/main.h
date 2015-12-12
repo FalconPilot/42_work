@@ -15,6 +15,8 @@
 # include		<libft.h>
 
 int				test_atoi(FILE *f);
+int				test_isalpha(FILE *f);
 int				test_isdigit(FILE *f);
+int				test_isalnum(FILE *f);
 
 #endif

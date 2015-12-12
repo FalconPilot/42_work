@@ -17,7 +17,9 @@ int		main(void)
 	diff = 0;
 	main_header(f);
 	diff += test_atoi(f);
+	diff += test_isalpha(f);
 	diff += test_isdigit(f);
+	diff += test_isalnum(f);
 	if (diff)
 		printf(RED "%d tests failed (check /tmp/lftest.log)\n" STD, diff);
 	else

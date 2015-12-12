@@ -24,7 +24,7 @@ int		diff_digit_loop(FILE *f)
 	int		diff;
 
 	diff = 0;
-	for (i = 45; i < 60; i++)
+	for (i = 45; i < 62; i++)
 		diff += diff_isdigit(i, f);
 	return (diff);
 }
