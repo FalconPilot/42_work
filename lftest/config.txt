@@ -1,0 +1,5 @@
+# =============================
+#     lftest config file
+# =============================
+
+PATH = ./libft_directory_name
