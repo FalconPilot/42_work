@@ -2,4 +2,6 @@
 #     lftest config file
 # =============================
 
-PATH = ./libft_directory_name
+PATH = ./libft_directory
+
+# Do NOT mess up the file format !
