@@ -7,6 +7,10 @@ int		diff_isascii(int test, FILE *f)
 
 	func = isascii(test);
 	user = ft_isascii(test);
+	if (func)
+		func /= func;
+	if (user)
+		user /= user;
 	if (func != user)
 	{
 		printf(RED "[X]" STD);

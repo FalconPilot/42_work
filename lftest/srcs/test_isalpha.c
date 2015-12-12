@@ -7,6 +7,10 @@ int		diff_isalpha(int test, FILE *f)
 
 	func = isalpha(test);
 	user = ft_isalpha(test);
+	if (func)
+		func /= func;
+	if (user)
+		user /= user;
 	if (func != user)
 	{
 		printf(RED "[X]" STD);

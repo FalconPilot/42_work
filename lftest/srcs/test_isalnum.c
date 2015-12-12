@@ -7,6 +7,10 @@ int		diff_isalnum(int test, FILE *f)
 
 	func = isalnum(test);
 	user = ft_isalnum(test);
+	if (func)
+		func /= func;
+	if (user)
+		user /= user;
 	if (func != user)
 	{
 		printf(RED "[X]" STD);

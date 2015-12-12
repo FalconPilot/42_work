@@ -7,6 +7,10 @@ int		diff_isdigit(int test, FILE *f)
 
 	func = isdigit(test);
 	user = ft_isdigit(test);
+	if (func)
+		func /= func;
+	if (user)
+		user /= user;
 	if (func != user)
 	{
 		printf(RED "[X]" STD);
