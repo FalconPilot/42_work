@@ -46,9 +46,12 @@ libcomp:
 	@cd $(LDIR) && make
 	@cp $(LDIR)/$(HEAD) $(IDIR)/$(HEAD)
 
-$(ODIR)%.o: $(SDIR)%.c
-	@echo "${GRE} +Compilation :${STD}" $^
-	@gcc $^ $(FLAG) -c -o $@
+$(ODIR)%.o: $(SDIR)%.c $(ODIR)
+	@echo "${GRE} +Compilation :${STD}" $<
+	@gcc $< $(FLAG) -c -o $@
+
+$(ODIR):
+	@mkdir $(ODIR)
 
 clean: header
 	@echo "${RED} -Nettoyage des fichiers objet...${STD}"
