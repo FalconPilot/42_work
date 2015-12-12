@@ -22,11 +22,7 @@ HEAD =		libft.h
 IDIR =		./incs
 
 SDIR =		./srcs/
-SRCS =		test_atoi.c				\
-			test_isdigit.c			\
-			test_isalpha.c			\
-			test_isalnum.c			\
-			test_isascii.c
+SRCS =		$(shell ls $(SDIR))
 
 ODIR =		./objs/
 OBJS =		$(SRCS:.c=.o)

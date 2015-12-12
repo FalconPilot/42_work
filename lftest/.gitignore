@@ -1,2 +1,4 @@
 libft/*
+objs/*
 incs/libft.h
+lftest
