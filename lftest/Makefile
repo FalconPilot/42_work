@@ -17,14 +17,16 @@ EXEC =		main.c
 
 LDIR =		./libft
 LIBR =		-lft
+HEAD =		libft.h
 
-IDIR =		$(LDIR)
+IDIR =		./incs
 
 SDIR =		./srcs/
 SRCS =		test_atoi.c				\
 			test_isdigit.c			\
 			test_isalpha.c			\
-			test_isalnum.c
+			test_isalnum.c			\
+			test_isascii.c
 
 ODIR =		./objs/
 OBJS =		$(SRCS:.c=.o)
@@ -46,6 +48,7 @@ program: $(OBCC)
 libcomp:
 	@echo "${GRE} +Compiling your Libft library...${STD}"
 	@cd $(LDIR) && make
+	@cp $(LDIR)/$(HEAD) $(IDIR)/$(HEAD)
 
 $(ODIR)%.o: $(SDIR)%.c
 	@echo "${GRE} +Compilation :${STD}" $^

@@ -18,5 +18,6 @@ int				test_atoi(FILE *f);
 int				test_isalpha(FILE *f);
 int				test_isdigit(FILE *f);
 int				test_isalnum(FILE *f);
+int				test_isascii(FILE *f);
 
 #endif

@@ -20,6 +20,7 @@ int		main(void)
 	diff += test_isalpha(f);
 	diff += test_isdigit(f);
 	diff += test_isalnum(f);
+	diff += test_isascii(f);
 	if (diff)
 		printf(RED "%d tests failed (check /tmp/lftest.log)\n" STD, diff);
 	else
