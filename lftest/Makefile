@@ -15,7 +15,7 @@ STD =		\033[39m
 NAME =		lftest
 EXEC =		main.c
 
-LDIR =		$(shell cat config.txt | grep "PATH" | cut -f 3 -d " ")
+LDIR =		$(shell cat config.ini | grep "PATH" | cut -f 2 -d "=")
 LIBR =		-lft
 HEAD =		libft.h
 
